@@ -1,10 +1,11 @@
 #include <unistd.h>
+#include <stdio.h>
 
-int main(int argc, char *argv[])
+int main(int argc, char const *argv[])
 {
-	int		j;
 	int		i;
-	unsigned char seen[256] = {0};
+	int		j;
+	int		seen[256] = {0};
 	if(argc == 3)
 	{
 		i = 0;
@@ -13,7 +14,7 @@ int main(int argc, char *argv[])
 			j = 0;
 			while(argv[2][j])
 			{
-				if(argv[1][i] == argv[2][j])
+				if(argv[2][j] == argv[1][i])
 				{
 					if(!seen[(unsigned char)argv[1][i]])
 					{
